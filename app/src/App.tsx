@@ -10,7 +10,7 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Router basename="/vratnicheck-web-test">
+    <Router basename={(import.meta.env.VITE_BASE_PATH ?? "").replace(/\/$/, "")}>
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />

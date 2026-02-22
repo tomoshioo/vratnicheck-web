@@ -2,6 +2,20 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## Nasazení na Vercel (vratnicheck.tomaskalivoda.cz)
+
+1. **Vercel**
+   - Repozitář připojte na [vercel.com](https://vercel.com) (Import Git Repository).
+   - **Root Directory** nastavte na `app` (pokud je projekt v podadresáři `verze2/app`).
+   - Build a výstup Vercel detekuje z `vercel.json` (Vite, SPA rewrites).
+   - Po nasazení získáte adresu typu `*.vercel.app`.
+
+2. **Vlastní doména v Cloudflare**
+   - Vercel: Project → Settings → Domains → Add `vratnicheck.tomaskalivoda.cz`.
+   - V **Cloudflare** (DNS pro tomaskalivoda.cz):
+     - Přidejte záznam **CNAME**: jméno `vratnicheck`, cíl `cname.vercel-dns.com` (nebo hodnotu, kterou Vercel zobrazí u domény).
+   - Vercel doménu ověří a vystaví SSL; weby budou dostupné na https://vratnicheck.tomaskalivoda.cz.
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
