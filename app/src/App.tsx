@@ -10,7 +10,7 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/vratnicheck-web-test">
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />

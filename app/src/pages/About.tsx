@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Award, Users, Building2, Globe } from 'lucide-react';
 import SectionTitle from '@/components/shared/SectionTitle';
@@ -179,12 +180,12 @@ const About = () => {
           <p className="text-xl text-white/90 mb-8">
             Kontaktujte nás a my vám pomůžeme najít to nejlepší řešení.
           </p>
-          <a 
-            href="/kontakt"
+          <Link 
+            to="/kontakt"
             className="inline-flex items-center bg-white text-[#3ECFA0] hover:bg-gray-100 px-10 py-4 rounded-full font-semibold text-lg transition-all hover:scale-105"
           >
             Kontaktujte nás
-          </a>
+          </Link>
         </div>
       </section>
     </div>
