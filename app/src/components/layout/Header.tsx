@@ -52,8 +52,12 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          {/* Logo - vždy přesměruje na homepage a scroll nahoru */}
+          <Link
+            to="/"
+            className="flex items-center space-x-2"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
             <span className="text-2xl font-bold">
               <span className="text-[#1a1a4e]">VRÁTNÍ</span>
               <span className="text-[#3ECFA0]">CHECK</span>
@@ -82,7 +86,8 @@ const Header = () => {
                       <ChevronDown className="ml-1 w-4 h-4" />
                     </button>
                     {isProductsOpen && (
-                      <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+                      <div className="absolute top-full left-0 pt-2 w-56 overflow-visible">
+                        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
                         {link.submenu.map((item) => (
                           <Link
                             key={item.label}
@@ -92,6 +97,7 @@ const Header = () => {
                             {item.label}
                           </Link>
                         ))}
+                        </div>
                       </div>
                     )}
                   </div>
