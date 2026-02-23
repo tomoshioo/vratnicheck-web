@@ -206,17 +206,33 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Placeholder */}
+      {/* Map - Google Maps embed s špendlíkem na adrese */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <div className="bg-gray-200 rounded-3xl h-96 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-500 text-lg">IMA s.r.o.</p>
-                <p className="text-gray-400">Na Valentince 1, Praha 5</p>
-              </div>
+            <div className="rounded-3xl overflow-hidden h-96 shadow-lg border border-gray-200">
+              <iframe
+                title="Mapa - IMA s.r.o., Na Valentince 1, Praha 5"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.389284317!2d14.404!3d50.074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b948fd3d2b8a9%3A0x2d21e37b2e7b5c!2sNa+Valentince%2C+150+00+Praha+5!5e0!3m2!1scs!2scz"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full min-h-[384px]"
+              />
             </div>
+            <p className="text-center text-gray-500 mt-4 text-sm">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Na+Valentince+1,+150+00+Praha+5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#3ECFA0] hover:underline"
+              >
+                Otevřít v Google Maps →
+              </a>
+            </p>
           </AnimatedSection>
         </div>
       </section>
