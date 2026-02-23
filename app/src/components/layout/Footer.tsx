@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Linkedin, Facebook, Twitter } from 'lucide-react';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   const quickLinks = [
     { label: 'Domů', href: '/' },
     { label: 'Média', href: '/media' },
@@ -15,12 +13,6 @@ const Footer = () => {
     { label: 'imaPORTER', href: '/produkty/importer' },
     { label: 'imaLOCKER', href: '/produkty/imalocker' },
     { label: 'imaPOUCH', href: '/produkty/imapouch' },
-  ];
-
-  const legalLinks = [
-    { label: 'GDPR', href: '#' },
-    { label: 'Obchodní podmínky', href: '#' },
-    { label: 'Cookies', href: '#' },
   ];
 
   return (
@@ -119,26 +111,6 @@ const Footer = () => {
                   jsem@vratnicheck.cz
                 </a>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
-              © {currentYear} IMA s.r.o. Všechna práva vyhrazena.
-            </p>
-            <div className="flex space-x-6">
-              {legalLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  to={link.href}
-                  className="text-gray-400 hover:text-[#3ECFA0] text-sm transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
             </div>
           </div>
         </div>
