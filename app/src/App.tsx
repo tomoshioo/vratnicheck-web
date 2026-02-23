@@ -7,6 +7,10 @@ import Imapouch from './pages/Products/Imapouch';
 import Media from './pages/Media';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/Legal/PrivacyPolicy';
+import TermsConditions from './pages/Legal/TermsConditions';
+import ServiceTerms from './pages/Legal/ServiceTerms';
+import CookiePolicy from './pages/Legal/CookiePolicy';
 
 function App() {
   return (
@@ -20,6 +24,10 @@ function App() {
           <Route path="/media" element={<Media />} />
           <Route path="/o-nas" element={<About />} />
           <Route path="/kontakt" element={<Contact />} />
+          <Route path="/ochrana-osobnich-udaju" element={<PrivacyPolicy />} />
+          <Route path="/obchodni-podminky" element={<TermsConditions />} />
+          <Route path="/servisni-podminky" element={<ServiceTerms />} />
+          <Route path="/cookies" element={<CookiePolicy />} />
         </Routes>
       </Layout>
     </Router>

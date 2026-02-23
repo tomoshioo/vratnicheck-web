@@ -27,10 +27,18 @@ const Footer = () => {
                 <span className="text-[#3ECFA0]">CHECK</span>
               </span>
             </Link>
-            <p className="text-gray-300 mb-6 text-sm leading-relaxed">
+            <p className="text-gray-300 mb-4 text-sm leading-relaxed">
               Kompletní řešení pro bezpečnost škol. Přístupové systémy, 
               skříňky na mobily a pouche. Vyvíjíme a vyrábíme v ČR.
             </p>
+            <a
+              href="https://www.ima.cz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#3ECFA0] hover:underline text-sm mb-6 inline-block"
+            >
+              www.ima.cz
+            </a>
             <div className="flex space-x-4">
               <a
                 href="https://www.linkedin.com/company/ima-s-r-o-/"
@@ -104,7 +112,7 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-[#3ECFA0] mt-0.5 flex-shrink-0" />
                 <span className="text-gray-300 text-sm">
                   IMA s.r.o.<br />
-                  Na Valentince 1<br />
+                  Na Valentince 1003/1<br />
                   Praha 5, 150 00
                 </span>
               </div>
@@ -121,6 +129,27 @@ const Footer = () => {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Právní odkazy a copyright */}
+        <div className="border-t border-white/10 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              <Link to="/obchodni-podminky" className="text-gray-300 hover:text-[#3ECFA0] transition-colors">
+                Všeobecné obchodní podmínky
+              </Link>
+              <Link to="/servisni-podminky" className="text-gray-300 hover:text-[#3ECFA0] transition-colors">
+                Všeobecné servisní podmínky
+              </Link>
+              <Link to="/ochrana-osobnich-udaju" className="text-gray-300 hover:text-[#3ECFA0] transition-colors">
+                Informace o zpracování osobních údajů
+              </Link>
+              <Link to="/cookies" className="text-gray-300 hover:text-[#3ECFA0] transition-colors">
+                Prohlášení o cookies
+              </Link>
+            </div>
+            <p className="text-gray-400 text-sm">© 2026 IMA s.r.o.</p>
           </div>
         </div>
       </div>

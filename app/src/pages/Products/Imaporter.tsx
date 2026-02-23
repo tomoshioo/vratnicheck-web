@@ -93,10 +93,17 @@ const Imaporter = () => {
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
-                <Button variant="outline" className="border-2 border-gray-300 px-8 py-3 rounded-full font-medium">
-                  <Download className="w-5 h-5 mr-2" />
-                  Technická specifikace
-                </Button>
+                <a
+                  href="/downloads/tech.specs-ctecka-imaporter-rsw05.pdf"
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline" className="border-2 border-gray-300 px-8 py-3 rounded-full font-medium w-full sm:w-auto">
+                    <Download className="w-5 h-5 mr-2" />
+                    Technická specifikace
+                  </Button>
+                </a>
               </div>
             </motion.div>
 
@@ -104,12 +111,12 @@ const Imaporter = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
+              className="relative flex items-center justify-center"
             >
               <img 
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop" 
-                alt="imaPORTER systém"
-                className="rounded-3xl shadow-2xl"
+                src="/images/products/imaporter-child-reader.png" 
+                alt="Žák přikládá kartu ke čtečce imaPORTER u vstupu do školy"
+                className="rounded-3xl shadow-2xl w-full max-w-lg object-cover"
               />
             </motion.div>
           </div>
@@ -153,9 +160,9 @@ const Imaporter = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
               <img 
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop" 
-                alt="Schéma systému"
-                className="rounded-3xl shadow-xl"
+                src="/images/products/imaporter-how-it-works.png" 
+                alt="imaPORTER – mobil s aplikací a čtečka přístupu na zdi"
+                className="rounded-3xl shadow-xl w-full object-cover"
               />
             </AnimatedSection>
 

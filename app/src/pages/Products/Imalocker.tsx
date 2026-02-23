@@ -121,12 +121,12 @@ const Imalocker = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
+              className="relative flex items-center justify-center"
             >
               <img 
-                src="https://images.unsplash.com/photo-1590248889512-76f8199d4a3d?w=800&h=600&fit=crop" 
-                alt="imaLOCKER"
-                className="rounded-3xl shadow-2xl"
+                src="/images/products/imalocker-mobile-36.png" 
+                alt="imaLOCKER Mobile 36 – skříňka na mobily s otevřenými dveřmi a přihrádkami"
+                className="rounded-3xl shadow-2xl w-full max-w-lg object-contain"
               />
               {/* Badge */}
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-6">
