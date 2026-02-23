@@ -138,7 +138,8 @@ const buttonHover = {
 |-------|-----------|-------------|
 | `/` | Home | Homepage |
 | `/produkty/importer` | Imaporter | Přístupový systém |
-| `/produkty/imalocker` | Imalocker | Skříňky na mobily |
+| `/produkty/imalocker` | Imalocker | Chytré skříňky pro školy |
+| `/produkty/imalocker-mobile` | ImalockerMobile | Skříňky na mobily |
 | `/produkty/imapouch` | Imapouch | Pouche na mobily |
 | `/media` | Media | Aktuality a články |
 | `/o-nas` | About | O firmě IMA |

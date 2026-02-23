@@ -38,7 +38,31 @@ export const products: Product[] = [
   },
   {
     id: 'imalocker',
-    name: 'imaLOCKER Mobile 36',
+    name: 'imaLOCKER',
+    shortName: 'Chytré skříňky pro školy',
+    tagline: 'Celé skříňky pro žáky na čip',
+    description: 'Šatní a úložné skříňky s digitálním přístupem – aplikace, čip nebo PIN. Správa v cloudu, statistiky využití a integrace se školním IS.',
+    features: [
+      'Přístup přes aplikaci IMAporter, čip nebo PIN',
+      'Cloudová správa a statistiky využití',
+      'Skupinové skříňky pro třídy a kroužky',
+      'Integrace se stávajícím informačním systémem',
+      'Až 120 chytrých zámků na jednu sestavu',
+      'Volitelně USB nabíjení, LED indikace, EINK display'
+    ],
+    benefits: [
+      'Žáci bez klíčů – vše v mobilu nebo na kartě',
+      'Přehled pro školu 24/7 v jednom portálu',
+      'Reference: TRIANGL Beroun, VIA Beroun',
+      'Řešení na míru – různé velikosti a počet'
+    ],
+    image: '/images/products/imalocker-mistnost.png',
+    icon: 'Lock',
+    color: '#9B7EDE'
+  },
+  {
+    id: 'imalocker-mobile',
+    name: 'imaLOCKER Mobile',
     shortName: 'Skříňky na mobily',
     tagline: 'Odlož. Zamkni. Soustřeď se.',
     description: 'Praktická a bezpečná úschova pro 36 mobilních telefonů. Vytvořte ve třídách „phone-free zónu", kde se studenti plně soustředí na učivo.',

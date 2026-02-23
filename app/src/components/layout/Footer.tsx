@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Linkedin, Facebook, Twitter } from 'lucide-react';
+import { Phone, Mail, MapPin, Linkedin, Facebook } from 'lucide-react';
+import { XLogo } from '@/components/icons/XLogo';
 
 const Footer = () => {
   const quickLinks = [
@@ -12,6 +13,7 @@ const Footer = () => {
   const productLinks = [
     { label: 'imaPORTER', href: '/produkty/importer' },
     { label: 'imaLOCKER', href: '/produkty/imalocker' },
+    { label: 'imaLOCKER Mobile', href: '/produkty/imalocker-mobile' },
     { label: 'imaPOUCH', href: '/produkty/imapouch' },
   ];
 
@@ -63,9 +65,9 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#3ECFA0] transition-colors"
-                aria-label="IMA s.r.o. na X (Twitter)"
+                aria-label="IMA s.r.o. na X"
               >
-                <Twitter className="w-5 h-5" />
+                <XLogo className="w-5 h-5" />
               </a>
             </div>
           </div>

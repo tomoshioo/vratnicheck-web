@@ -29,6 +29,7 @@ const Header = () => {
       submenu: [
         { label: 'imaPORTER', href: '/produkty/importer' },
         { label: 'imaLOCKER', href: '/produkty/imalocker' },
+        { label: 'imaLOCKER Mobile', href: '/produkty/imalocker-mobile' },
         { label: 'imaPOUCH', href: '/produkty/imapouch' },
       ]
     },

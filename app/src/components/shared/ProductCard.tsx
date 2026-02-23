@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, DoorOpen, Smartphone, ShoppingBag } from 'lucide-react';
+import { ArrowRight, DoorOpen, Lock, Smartphone, ShoppingBag } from 'lucide-react';
 import type { Product } from '@/data/products';
 
 const iconMap: Record<string, React.ElementType> = {
   DoorOpen,
+  Lock,
   Smartphone,
   ShoppingBag
 };

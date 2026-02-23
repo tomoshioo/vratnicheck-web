@@ -1,19 +1,8 @@
+import { Link } from 'react-router-dom';
 import { Calendar } from 'lucide-react';
-import { articles } from '@/data/articles';
+import { articles, categoryLabels, categoryColors } from '@/data/articles';
 import SectionTitle from '@/components/shared/SectionTitle';
 import AnimatedSection from '@/components/shared/AnimatedSection';
-
-const categoryLabels: Record<string, string> = {
-  'tiskova-zprava': 'Tisková zpráva',
-  'rozhovor': 'Rozhovor',
-  'clanek': 'Článek'
-};
-
-const categoryColors: Record<string, string> = {
-  'tiskova-zprava': '#3ECFA0',
-  'rozhovor': '#FF6B9D',
-  'clanek': '#9B7EDE'
-};
 
 const Media = () => {
   return (
@@ -56,12 +45,15 @@ const Media = () => {
                     <p className="text-gray-600 line-clamp-3 mb-4 flex-grow">
                       {article.excerpt}
                     </p>
-                    <button className="text-[#3ECFA0] font-medium hover:underline inline-flex items-center">
+                    <Link
+                      to={`/media/${article.slug}`}
+                      className="text-[#3ECFA0] font-medium hover:underline inline-flex items-center mt-auto"
+                    >
                       Číst dál
                       <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
-                    </button>
+                    </Link>
                   </div>
                 </article>
               </AnimatedSection>
