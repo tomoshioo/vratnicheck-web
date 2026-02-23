@@ -9,8 +9,15 @@ export default defineConfig({
   base: process.env.VITE_BASE_PATH ?? "/",
   plugins: [inspectAttr(), react()],
   server: {
+    host: true,
     port: 5174,
     strictPort: true,
+    open: true,
+  },
+  preview: {
+    host: true,
+    port: 5175,
+    open: true,
   },
   resolve: {
     alias: {
