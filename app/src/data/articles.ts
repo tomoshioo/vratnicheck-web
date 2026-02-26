@@ -22,6 +22,21 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    id: 'imaporter-format',
+    title: 'imaPORTER – nový formát (malé ima, velké PORTER)',
+    excerpt:
+      'Představujeme nové jednotné názvosloví našeho přístupového systému: imaPORTER. Malé „ima“ a velké „PORTER“ vyjadřují spojení značky IMA s produktovou řadou určenou pro školy.',
+    date: '26. 2. 2026',
+    category: 'tiskova-zprava',
+    image: 'https://images.unsplash.com/photo-1544531586-fde5298cdd40?w=800&h=500&fit=crop',
+    slug: 'imaporter-novy-format',
+    content: `Představujeme nové jednotné názvosloví našeho přístupového systému: **imaPORTER**. Formát s malým „ima“ a velkým „PORTER“ vyjadřuje spojení značky IMA s produktovou řadou určenou pro školská zařízení.
+
+Přístupový systém imaPORTER (dříve uváděný také jako IMAporter) je nadále stejný spolehlivý produkt – mění se pouze jeho vizuální a textové označení na webu a v materiálech. Cílem je sjednotit komunikaci a posílit rozpoznatelnost značky.
+
+Všechny funkce zůstávají beze změny: otevírání mobilem (NFC na Androidu i iOS), čipy a karty, integrace s Bakaláři, Škola Online, Edupage a Edookit, hlášení rodičům a plná podpora Vrátnícheck.`,
+  },
+  {
     id: '1',
     title: 'IMA a Vrátnícheck na konferenci ElectroJobs 2025',
     excerpt:

@@ -40,8 +40,8 @@ export const products: Product[] = [
     id: 'imalocker',
     name: 'imaLOCKER',
     shortName: 'Chytré skříňky pro školy',
-    tagline: 'Celé skříňky pro žáky na čip',
-    description: 'Šatní a úložné skříňky s digitálním přístupem – aplikace, čip nebo PIN. Správa v cloudu, statistiky využití a integrace se školním IS.',
+    tagline: 'Skříňky pro žáky na čip',
+    description: 'Moderní způsob šatních a úložných skříněk pro žáky i učitele. Možnost propojení se stávajícím přístupovým systémem – jeden čip.',
     features: [
       'Přístup přes aplikaci IMAporter, čip nebo PIN',
       'Cloudová správa a statistiky využití',
@@ -89,7 +89,7 @@ export const products: Product[] = [
     name: 'imaPOUCH',
     shortName: 'Pouche na mobily',
     tagline: 'Mobilní telefon do batohu nebo do pouche?',
-    description: 'Flexibilní řešení pro úschovu mobilních telefonů ve škole. Jednoduché pouche, které žákům pomáhá odložit telefon a soustředit se na výuku.',
+    description: 'Flexibilní řešení pro úschovu mobilních telefonů ve škole. Jedná se o uzamykatelné pouzdro na telefon, které žákům pomáhá odložit mobil a soustředit se na výuku.',
     features: [
       'Jednoduché a levné řešení',
       'Různé velikosti a barvy',
@@ -158,6 +158,6 @@ export const howItWorks = [
   {
     step: 4,
     title: 'Podpora a servis',
-    description: 'Non-stop technická podpora a pravidelný servis.'
+    description: 'Technická podpora a pravidelný servis.'
   }
 ];

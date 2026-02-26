@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -5,11 +6,32 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import AnimatedSection from '@/components/shared/AnimatedSection';
+import { submitToFormspree } from '@/lib/formSubmit';
+
+type FormStatus = 'idle' | 'loading' | 'success' | 'error';
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<FormStatus>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert('Děkujeme za váš zájem. Brzy se vám ozveme!');
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const payload: Record<string, string> = {};
+    fd.forEach((value, key) => {
+      if (typeof value === 'string') payload[key] = value;
+    });
+    setStatus('loading');
+    setErrorMessage('');
+    const result = await submitToFormspree(payload);
+    if (result.ok) {
+      setStatus('success');
+      form.reset();
+    } else {
+      setStatus('error');
+      setErrorMessage(result.error);
+    }
   };
 
   return (
@@ -54,7 +76,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold text-lg mb-2">Adresa</h3>
                       <div className="text-gray-300">
-                        Na Valentince 1<br />
+                        Karla Engliše 6<br />
                         Praha 5, 150 00<br />
                         IČO: 45277397
                       </div>
@@ -132,6 +154,7 @@ const Contact = () => {
                     </Label>
                     <Input
                       id="name"
+                      name="name"
                       type="text"
                       required
                       className="mt-2 bg-white border-gray-200 focus:border-[#3ECFA0] focus:ring-[#3ECFA0] h-12"
@@ -146,6 +169,7 @@ const Contact = () => {
                       </Label>
                       <Input
                         id="email"
+                        name="email"
                         type="email"
                         required
                         className="mt-2 bg-white border-gray-200 focus:border-[#3ECFA0] focus:ring-[#3ECFA0] h-12"
@@ -158,6 +182,7 @@ const Contact = () => {
                       </Label>
                       <Input
                         id="phone"
+                        name="phone"
                         type="tel"
                         className="mt-2 bg-white border-gray-200 focus:border-[#3ECFA0] focus:ring-[#3ECFA0] h-12"
                         placeholder="+420 123 456 789"
@@ -171,6 +196,7 @@ const Contact = () => {
                     </Label>
                     <Input
                       id="school"
+                      name="school"
                       type="text"
                       className="mt-2 bg-white border-gray-200 focus:border-[#3ECFA0] focus:ring-[#3ECFA0] h-12"
                       placeholder="Název školy"
@@ -183,17 +209,29 @@ const Contact = () => {
                     </Label>
                     <Textarea
                       id="message"
+                      name="message"
                       rows={5}
                       className="mt-2 bg-white border-gray-200 focus:border-[#3ECFA0] focus:ring-[#3ECFA0]"
                       placeholder="Co vás zajímá?"
                     />
                   </div>
 
+                  {status === 'success' && (
+                    <p className="text-[#3ECFA0] font-medium text-center">
+                      Děkujeme za zprávu. Brzy se vám ozveme!
+                    </p>
+                  )}
+                  {status === 'error' && (
+                    <p className="text-red-600 text-center text-sm">
+                      {errorMessage}
+                    </p>
+                  )}
                   <Button
                     type="submit"
-                    className="w-full bg-[#3ECFA0] hover:bg-[#2ab88a] text-white py-4 rounded-full font-semibold text-lg transition-all hover:scale-[1.02]"
+                    disabled={status === 'loading'}
+                    className="w-full bg-[#3ECFA0] hover:bg-[#2ab88a] text-white py-4 rounded-full font-semibold text-lg transition-all hover:scale-[1.02] disabled:opacity-70"
                   >
-                    Odeslat zprávu
+                    {status === 'loading' ? 'Odesílám…' : 'Odeslat zprávu'}
                   </Button>
 
                   <p className="text-sm text-gray-500 text-center">
@@ -212,8 +250,8 @@ const Contact = () => {
           <AnimatedSection>
             <div className="rounded-3xl overflow-hidden h-96 shadow-lg border border-gray-200">
               <iframe
-                title="Mapa - IMA s.r.o., Na Valentince 1, Praha 5"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.389284317!2d14.404!3d50.074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b948fd3d2b8a9%3A0x2d21e37b2e7b5c!2sNa+Valentince%2C+150+00+Praha+5!5e0!3m2!1scs!2scz"
+                title="Mapa - IMA s.r.o., Karla Engliše 6, Praha 5"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.389284317!2d14.404!3d50.074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b948fd3d2b8a9%3A0x2d21e37b2e7b5c!2sKarla+Engli%C5%A1e+6%2C+150+00+Praha+5!5e0!3m2!1scs!2scz"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -225,7 +263,7 @@ const Contact = () => {
             </div>
             <p className="text-center text-gray-500 mt-4 text-sm">
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Na+Valentince+1,+150+00+Praha+5"
+                href="https://www.google.com/maps/search/?api=1&query=Karla+Engli%C5%A1e+6,+150+00+Praha+5"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#3ECFA0] hover:underline"

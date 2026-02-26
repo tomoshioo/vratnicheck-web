@@ -87,7 +87,7 @@ const Imalocker = () => {
                 imaLOCKER
               </h1>
               <p className="text-2xl text-[#1a1a4e]/90 font-semibold mb-4">
-                Celé skříňky pro žáky na čip. Digitální, bezpečné, 24/7.
+                Skříňky pro žáky na čip. Digitální, bezpečné, 24/7.
               </p>
               <p className="text-xl text-gray-600 mb-8">
                 Moderní řešení chytrých skříněk pro školy: šatní a úložné skříňky s digitálním přístupem. 
@@ -168,7 +168,7 @@ const Imalocker = () => {
               className="rounded-3xl shadow-xl w-full object-cover max-h-[480px]"
             />
             <p className="text-center text-gray-500 mt-4 text-sm">
-              Celé skříňky pro žáky s digitálním přístupem a moderním designem.
+              Skříňky pro žáky s digitálním přístupem a moderním designem.
             </p>
           </AnimatedSection>
         </div>

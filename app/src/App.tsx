@@ -1,6 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import ScrollToTop from './components/layout/ScrollToTop';
+import { trackPageView } from './lib/analytics';
 import Home from './pages/Home';
 import Imaporter from './pages/Products/Imaporter';
 import Imalocker from './pages/Products/Imalocker';
@@ -15,9 +17,15 @@ import TermsConditions from './pages/Legal/TermsConditions';
 import ServiceTerms from './pages/Legal/ServiceTerms';
 import CookiePolicy from './pages/Legal/CookiePolicy';
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  useEffect(() => {
+    const path = location.pathname + location.search;
+    trackPageView(path);
+  }, [location.pathname, location.search]);
+
   return (
-    <Router basename={(import.meta.env.VITE_BASE_PATH ?? "").replace(/\/$/, "")}>
+    <>
       <ScrollToTop />
       <Layout>
         <Routes>
@@ -36,6 +44,14 @@ function App() {
           <Route path="/cookies" element={<CookiePolicy />} />
         </Routes>
       </Layout>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router basename={(import.meta.env.VITE_BASE_PATH ?? "").replace(/\/$/, "")}>
+      <AppContent />
     </Router>
   );
 }

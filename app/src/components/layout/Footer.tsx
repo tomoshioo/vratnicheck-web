@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Linkedin, Facebook } from 'lucide-react';
-import { XLogo } from '@/components/icons/XLogo';
+import { Phone, Mail, MapPin, Linkedin, Facebook, Youtube } from 'lucide-react';
 
 const Footer = () => {
   const quickLinks = [
@@ -43,15 +42,6 @@ const Footer = () => {
             </a>
             <div className="flex space-x-4">
               <a
-                href="https://www.linkedin.com/company/ima-s-r-o-/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#3ECFA0] transition-colors"
-                aria-label="IMA s.r.o. na LinkedInu"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
                 href="https://www.facebook.com/imaczech"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -61,13 +51,22 @@ const Footer = () => {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="https://x.com/ima_cz"
+                href="https://cz.linkedin.com/company/ima-s-r-o-"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#3ECFA0] transition-colors"
-                aria-label="IMA s.r.o. na X"
+                aria-label="IMA s.r.o. na LinkedInu"
               >
-                <XLogo className="w-5 h-5" />
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.youtube.com/user/identifikacnisystemy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#3ECFA0] transition-colors"
+                aria-label="IMA s.r.o. na YouTube"
+              >
+                <Youtube className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -114,7 +113,7 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-[#3ECFA0] mt-0.5 flex-shrink-0" />
                 <span className="text-gray-300 text-sm">
                   IMA s.r.o.<br />
-                  Na Valentince 1003/1<br />
+                  Karla Engliše 6<br />
                   Praha 5, 150 00
                 </span>
               </div>

@@ -80,7 +80,8 @@ const Imaporter = () => {
                 Přístupový systém
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a1a4e] mb-6">
-                imaPORTER
+                <span className="text-2xl md:text-3xl lg:text-4xl font-normal">ima</span>
+                <span className="uppercase">PORTER</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8">
                 Chytrý vstup do školy. Moderní přístupový systém, který umožňuje 

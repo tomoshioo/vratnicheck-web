@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -5,11 +6,30 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import SectionTitle from '@/components/shared/SectionTitle';
+import { submitToFormspree } from '@/lib/formSubmit';
 
 const ContactSection = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert('Děkujeme za váš zájem. Brzy se vám ozveme!');
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const payload: Record<string, string> = {};
+    fd.forEach((value, key) => {
+      if (typeof value === 'string') payload[key] = value;
+    });
+    setStatus('loading');
+    setErrorMessage('');
+    const result = await submitToFormspree(payload);
+    if (result.ok) {
+      setStatus('success');
+      form.reset();
+    } else {
+      setStatus('error');
+      setErrorMessage(result.error);
+    }
   };
 
   return (
@@ -113,6 +133,7 @@ const ContactSection = () => {
                   </Label>
                   <Input
                     id="name"
+                    name="name"
                     type="text"
                     required
                     className="mt-2 bg-white border-gray-200 focus:border-[#3ECFA0] focus:ring-[#3ECFA0]"
@@ -126,6 +147,7 @@ const ContactSection = () => {
                   </Label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
                     required
                     className="mt-2 bg-white border-gray-200 focus:border-[#3ECFA0] focus:ring-[#3ECFA0]"
@@ -139,6 +161,7 @@ const ContactSection = () => {
                   </Label>
                   <Input
                     id="phone"
+                    name="phone"
                     type="tel"
                     className="mt-2 bg-white border-gray-200 focus:border-[#3ECFA0] focus:ring-[#3ECFA0]"
                     placeholder="+420 123 456 789"
@@ -151,6 +174,7 @@ const ContactSection = () => {
                   </Label>
                   <Input
                     id="school"
+                    name="school"
                     type="text"
                     className="mt-2 bg-white border-gray-200 focus:border-[#3ECFA0] focus:ring-[#3ECFA0]"
                     placeholder="Název školy"
@@ -163,17 +187,27 @@ const ContactSection = () => {
                   </Label>
                   <Textarea
                     id="message"
+                    name="message"
                     rows={4}
                     className="mt-2 bg-white border-gray-200 focus:border-[#3ECFA0] focus:ring-[#3ECFA0]"
                     placeholder="Co vás zajímá?"
                   />
                 </div>
 
+                {status === 'success' && (
+                  <p className="text-[#3ECFA0] font-medium text-center text-sm">
+                    Děkujeme za zprávu. Brzy se vám ozveme!
+                  </p>
+                )}
+                {status === 'error' && (
+                  <p className="text-red-600 text-center text-sm">{errorMessage}</p>
+                )}
                 <Button
                   type="submit"
-                  className="w-full bg-[#3ECFA0] hover:bg-[#2ab88a] text-white py-3 rounded-full font-medium transition-all hover:scale-[1.02]"
+                  disabled={status === 'loading'}
+                  className="w-full bg-[#3ECFA0] hover:bg-[#2ab88a] text-white py-3 rounded-full font-medium transition-all hover:scale-[1.02] disabled:opacity-70"
                 >
-                  Odeslat zprávu
+                  {status === 'loading' ? 'Odesílám…' : 'Odeslat zprávu'}
                 </Button>
               </div>
             </form>

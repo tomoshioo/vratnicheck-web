@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
@@ -9,11 +10,18 @@ import {
   Award,
   CheckCircle,
   ArrowRight,
-  Clock
+  Clock,
+  User,
+  Phone,
+  Mail
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
 import SectionTitle from '@/components/shared/SectionTitle';
 import AnimatedSection from '@/components/shared/AnimatedSection';
+import { submitToFormspree } from '@/lib/formSubmit';
 
 const benefits = [
   {
@@ -75,13 +83,32 @@ const useCases = [
 const specs = [
   { label: 'Kapacita', value: '36 mobilních telefonů' },
   { label: 'Materiál', value: 'Ocel s práškovým nástřikem' },
-  { label: 'Dveře', value: 'Tvrzené sklo / transparentní' },
-  { label: 'Rozměry', value: '500 x 400 x 300 mm (V x Š x H)' },
+  { label: 'Dveře', value: 'Tvrzený polykarbonát / transparentní' },
+  { label: 'Rozměry', value: '27,5 × 43,5 × 20,5 cm (Š × V × H)' },
   { label: 'Zámek', value: 'Mechanický / elektronický (volitelně)' },
   { label: 'Přihrádky', value: '36 očíslovaných slotů' },
 ];
 
 const ImalockerMobile = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    setErrorMessage('');
+    const payload = { ...formData, _subject: 'imaLOCKER Mobile – poptávka z webu' };
+    const result = await submitToFormspree(payload);
+    if (result.ok) {
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+    } else {
+      setStatus('error');
+      setErrorMessage(result.error);
+    }
+  };
+
   return (
     <div className="pt-20">
       {/* Hero */}
@@ -172,9 +199,9 @@ const ImalockerMobile = () => {
 
             <AnimatedSection delay={0.2}>
               <img 
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=600&fit=crop" 
-                alt="Studenti ve třídě"
-                className="rounded-3xl shadow-xl"
+                src="/images/products/studenti-trida.png" 
+                alt="Studenti ve třídě – mobil pod lavicí"
+                className="rounded-3xl shadow-xl w-full object-cover aspect-[4/3]"
               />
             </AnimatedSection>
           </div>
@@ -268,21 +295,123 @@ const ImalockerMobile = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 bg-gradient-to-br from-[#FF6B9D] to-[#ff5285]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Vytvořte ve škole „phone-free zónu"
-          </h2>
-          <p className="text-xl text-white/90 mb-8">
-            Kontaktujte nás pro cenovou nabídku a termín dodání.
-          </p>
-          <Link to="/kontakt">
-            <Button className="bg-white text-[#FF6B9D] hover:bg-gray-100 px-10 py-4 rounded-full font-semibold text-lg">
-              Chci nabídku
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </Link>
+      {/* Kontaktní osoba + formulář */}
+      <section id="kontakt" className="py-24 bg-gray-50 scroll-mt-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionTitle
+            title="Chcete cenovou nabídku?"
+            subtitle="Zanechte nám kontakt – ozveme se, probereme s vámi vše a připravíme nabídku na míru."
+          />
+          <div className="grid lg:grid-cols-2 gap-10 items-start">
+            {/* Kontaktní osoba */}
+            <AnimatedSection>
+              <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-100">
+                <h3 className="text-xl font-bold text-[#1a1a4e] mb-6 flex items-center gap-2">
+                  <User className="w-6 h-6 text-[#FF6B9D]" />
+                  Kontaktní osoba pro imaLOCKER Mobile
+                </h3>
+                <p className="text-2xl font-semibold text-[#1a1a4e] mb-6">
+                  Pavel Zvára
+                </p>
+                <div className="space-y-4">
+                  <a
+                    href="tel:+420733595617"
+                    className="flex items-center gap-3 text-gray-600 hover:text-[#FF6B9D] transition-colors"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-[#FF6B9D]/10 flex items-center justify-center">
+                      <Phone className="w-5 h-5 text-[#FF6B9D]" />
+                    </div>
+                    <span className="text-lg">733 595 617</span>
+                  </a>
+                  <a
+                    href="mailto:pavel.zvara@ima.cz"
+                    className="flex items-center gap-3 text-gray-600 hover:text-[#FF6B9D] transition-colors"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-[#FF6B9D]/10 flex items-center justify-center">
+                      <Mail className="w-5 h-5 text-[#FF6B9D]" />
+                    </div>
+                    <span className="text-lg">pavel.zvara@ima.cz</span>
+                  </a>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Stručný kontaktní formulář */}
+            <AnimatedSection delay={0.1}>
+              <form
+                onSubmit={handleSubmit}
+                className="bg-white rounded-3xl p-8 shadow-md border border-gray-100"
+              >
+                <h3 className="text-xl font-bold text-[#1a1a4e] mb-2">
+                  Zanechte nám kontakt
+                </h3>
+                <p className="text-gray-600 text-sm mb-6">
+                  Ozveme se a rádi s vámi probereme detaily a připravíme cenovou nabídku.
+                </p>
+                <div className="space-y-4">
+                  <div>
+                    <Label htmlFor="mobile-name" className="text-[#1a1a4e]">
+                      Jméno
+                    </Label>
+                    <Input
+                      id="mobile-name"
+                      type="text"
+                      placeholder="Vaše jméno"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="mt-1 rounded-xl border-gray-200"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="mobile-email" className="text-[#1a1a4e]">
+                      E-mail
+                    </Label>
+                    <Input
+                      id="mobile-email"
+                      type="email"
+                      placeholder="vas@email.cz"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="mt-1 rounded-xl border-gray-200"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="mobile-message" className="text-[#1a1a4e]">
+                      Zpráva
+                    </Label>
+                    <Textarea
+                      id="mobile-message"
+                      placeholder="Váš dotaz nebo poptávka..."
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="mt-1 rounded-xl border-gray-200 min-h-[100px]"
+                      required
+                    />
+                  </div>
+                  {status === 'success' && (
+                    <p className="text-[#3ECFA0] font-medium text-sm">
+                      Děkujeme. Pavel Zvára se vám brzy ozve!
+                    </p>
+                  )}
+                  {status === 'error' && (
+                    <p className="text-red-600 text-sm">{errorMessage}</p>
+                  )}
+                  <Button
+                    type="submit"
+                    disabled={status === 'loading'}
+                    className="w-full bg-[#FF6B9D] hover:bg-[#ff5285] text-white rounded-xl py-3 font-medium disabled:opacity-70"
+                  >
+                    {status === 'loading' ? 'Odesílám…' : 'Odeslat'}
+                  </Button>
+                </div>
+                <p className="text-xs text-gray-500 mt-4">
+                  Odesláním souhlasíte se zpracováním osobních údajů.
+                </p>
+              </form>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
     </div>

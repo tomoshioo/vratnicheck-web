@@ -2,6 +2,27 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## Formuláře – odesílání na e-mail (Formspree)
+
+Všechny kontaktní formuláře na webu (stránka Kontakt, sekce na homepage, imaLOCKER Mobile) odesílají data na váš e-mail přes službu [Formspree](https://formspree.io).
+
+**Nastavení:**
+
+1. Jděte na [formspree.io](https://formspree.io), zaregistrujte se (zdarma).
+2. Vytvořte nový formulář („New form“).
+3. Ověřte e-mail, na který chcete dostávat zprávy (např. **jsem@vratnicheck.cz** nebo **josef.purnoch@ima.cz**).
+4. Zkopírujte **Form ID** – v URL formuláře je to část za `/f/`, např. `mzbjnpae`.
+5. Nastavte proměnnou prostředí:
+   - **Lokálně:** vytvořte v adresáři `app/` soubor `.env` (viz `app/.env.example`) a přidejte:
+     ```
+     VITE_FORMSPREE_FORM_ID=vas_form_id
+     ```
+   - **Na Vercelu:** Project → Settings → Environment Variables → přidejte `VITE_FORMSPREE_FORM_ID` s hodnotou vašeho Form ID. Po změně env znovu nasaďte (Redeploy).
+
+Bez nastaveného Form ID formuláře zobrazí chybu „Formulář není nakonfigurován“. Na doméně **www.vratnicheck.cz** tedy nezapomeňte nastavit env proměnnou v hostingu (Vercel / jiný).
+
+---
+
 ## Nasazení na Vercel (vratnicheck.tomaskalivoda.cz)
 
 1. **Vercel**

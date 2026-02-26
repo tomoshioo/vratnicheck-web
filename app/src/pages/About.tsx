@@ -55,20 +55,40 @@ const About = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="grid grid-cols-2 gap-6"
+              className="space-y-6"
             >
-              {[
-                { icon: Building2, label: 'Společnost', value: 'IMA s.r.o.' },
-                { icon: Globe, label: 'Skupina', value: 'WITTE Automotive' },
-                { icon: Users, label: 'Zaměstnanců', value: '50+' },
-                { icon: Award, label: 'Certifikace', value: 'ISO 9001' },
-              ].map((item, index) => (
-                <div key={index} className="bg-white/10 rounded-2xl p-6">
-                  <item.icon className="w-8 h-8 text-[#3ECFA0] mb-3" />
-                  <div className="text-gray-400 text-sm">{item.label}</div>
-                  <div className="text-xl font-semibold">{item.value}</div>
-                </div>
-              ))}
+              <div className="grid grid-cols-2 gap-6">
+                {[
+                  { icon: Building2, label: 'Společnost', value: 'IMA s.r.o.' },
+                  { icon: Globe, label: 'Skupina', value: 'WITTE Automotive' },
+                  { icon: Users, label: 'Zaměstnanců', value: '50+' },
+                  { icon: Award, label: 'Certifikace', value: 'ISO 9001' },
+                ].map((item, index) => (
+                  <div key={index} className="bg-white/10 rounded-2xl p-6">
+                    <item.icon className="w-8 h-8 text-[#3ECFA0] mb-3" />
+                    <div className="text-gray-400 text-sm">{item.label}</div>
+                    <div className="text-xl font-semibold">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-4 pt-2">
+                <a
+                  href="https://www.ima.cz/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-full font-medium transition-colors"
+                >
+                  IMA s.r.o.
+                </a>
+                <a
+                  href="https://www.witte-automotive.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-full font-medium transition-colors"
+                >
+                  Skupina WITTE
+                </a>
+              </div>
             </motion.div>
           </div>
         </div>

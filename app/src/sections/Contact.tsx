@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { submitToFormspree } from '@/lib/formSubmit';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -16,11 +17,22 @@ const Contact = () => {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    alert('Děkujeme za váš zájem. Brzy se vám ozveme!');
+    setStatus('loading');
+    setErrorMessage('');
+    const payload = { ...formData, _subject: 'Vrátnícheck – kontakt z webu' };
+    const result = await submitToFormspree(payload);
+    if (result.ok) {
+      setStatus('success');
+      setFormData({ name: '', email: '', phone: '', school: '', role: 'zrizovatel', message: '' });
+    } else {
+      setStatus('error');
+      setErrorMessage(result.error);
+    }
   };
 
   return (
@@ -199,11 +211,20 @@ const Contact = () => {
                 />
               </div>
 
+              {status === 'success' && (
+                <p className="text-[#3ECFA0] font-medium text-center text-sm">
+                  Děkujeme. Brzy se vám ozveme!
+                </p>
+              )}
+              {status === 'error' && (
+                <p className="text-red-600 text-center text-sm">{errorMessage}</p>
+              )}
               <Button
                 type="submit"
-                className="w-full bg-[#3ECFA0] hover:bg-[#2ab88a] text-white py-3 rounded-full font-medium"
+                disabled={status === 'loading'}
+                className="w-full bg-[#3ECFA0] hover:bg-[#2ab88a] text-white py-3 rounded-full font-medium disabled:opacity-70"
               >
-                Odeslat
+                {status === 'loading' ? 'Odesílám…' : 'Odeslat'}
               </Button>
             </form>
           </div>

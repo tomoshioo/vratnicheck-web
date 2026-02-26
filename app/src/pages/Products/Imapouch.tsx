@@ -6,7 +6,10 @@ import {
   Palette, 
   Users,
   CheckCircle,
-  ArrowRight
+  ArrowRight,
+  User,
+  Phone,
+  Mail
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import SectionTitle from '@/components/shared/SectionTitle';
@@ -34,7 +37,7 @@ const benefits = [
   {
     icon: ShoppingBag,
     title: 'Skladné a přenosné',
-    description: 'Lehké pouche, které se vejde do každé tašky.',
+    description: 'Lehké uzamykatelné pouzdro, které se vejde do každé tašky.',
     color: '#FFE66D'
   }
 ];
@@ -62,8 +65,7 @@ const Imapouch = () => {
                 Mobilní telefon do batohu nebo do pouche?
               </p>
               <p className="text-xl text-gray-600 mb-8">
-                Flexibilní řešení pro úschovu mobilních telefonů ve škole. 
-                Jednoduché pouche, které žákům pomáhá odložit telefon a soustředit se na výuku.
+                Jedná se o uzamykatelné pouzdro na telefon. Flexibilní řešení pro úschovu mobilů ve škole – žákům pomáhá odložit mobil a soustředit se na výuku.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to="/kontakt">
@@ -82,9 +84,9 @@ const Imapouch = () => {
               className="relative"
             >
               <img 
-                src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&h=600&fit=crop" 
-                alt="imaPOUCH"
-                className="rounded-3xl shadow-2xl"
+                src="/images/products/imapouch-rozmery.png" 
+                alt="imaPOUCH – pouche s rozměry"
+                className="rounded-3xl shadow-2xl w-full max-w-lg mx-auto object-contain"
               />
             </motion.div>
           </div>
@@ -99,8 +101,8 @@ const Imapouch = () => {
               Jednoduché řešení pro každou školu
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              imaPOUCH je ideální volba pro školy, které hledají ekonomické a flexibilní řešení 
-              pro odkládání mobilních telefonů během výuky. Na rozdíl od skříňek nevyžaduje 
+              imaPOUCH je uzamykatelné pouzdro na telefon a ideální volba pro školy, které hledají ekonomické a flexibilní řešení 
+              pro odkládání mobilů během výuky. Na rozdíl od skříňek nevyžaduje 
               instalaci a může být použito okamžitě.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -160,9 +162,9 @@ const Imapouch = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
               <img 
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop" 
-                alt="Jak to funguje"
-                className="rounded-3xl shadow-xl"
+                src="/images/products/imapouch-how-to-use.png" 
+                alt="Jak imaPOUCH používat – návod krok za krokem"
+                className="rounded-3xl shadow-xl w-full"
               />
             </AnimatedSection>
 
@@ -239,6 +241,47 @@ const Imapouch = () => {
               </AnimatedSection>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Kontaktní osoba pro imaPOUCH */}
+      <section id="kontakt" className="py-24 bg-gray-50 scroll-mt-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionTitle
+            title="Chcete cenovou nabídku?"
+            subtitle="Kontaktujte našeho specialistu na imaPOUCH – rád s vámi probere možnosti a připraví nabídku na míru."
+          />
+          <AnimatedSection>
+            <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-100 max-w-md">
+              <h3 className="text-xl font-bold text-[#1a1a4e] mb-6 flex items-center gap-2">
+                <User className="w-6 h-6 text-[#9B7EDE]" />
+                Kontaktní osoba pro imaPOUCH
+              </h3>
+              <p className="text-2xl font-semibold text-[#1a1a4e] mb-6">
+                Pavel Zvára
+              </p>
+              <div className="space-y-4">
+                <a
+                  href="tel:+420733595617"
+                  className="flex items-center gap-3 text-gray-600 hover:text-[#9B7EDE] transition-colors"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-[#9B7EDE]/10 flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-[#9B7EDE]" />
+                  </div>
+                  <span className="text-lg">733 595 617</span>
+                </a>
+                <a
+                  href="mailto:pavel.zvara@ima.cz"
+                  className="flex items-center gap-3 text-gray-600 hover:text-[#9B7EDE] transition-colors"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-[#9B7EDE]/10 flex items-center justify-center">
+                    <Mail className="w-5 h-5 text-[#9B7EDE]" />
+                  </div>
+                  <span className="text-lg">pavel.zvara@ima.cz</span>
+                </a>
+              </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 

@@ -27,7 +27,7 @@ const steps = [
   {
     step: 4,
     title: 'Podpora a servis',
-    description: 'Non-stop technická podpora a pravidelný servis. Jsme tu pro vás, kdykoliv nás potřebujete.',
+    description: 'Technická podpora a pravidelný servis. Jsme tu pro vás, když nás potřebujete.',
     icon: Headphones,
     color: '#FFE66D'
   }
