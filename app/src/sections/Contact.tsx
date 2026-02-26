@@ -59,7 +59,7 @@ const Contact = () => {
                 IMA s.r.o.,
               </h3>
               <p className="text-gray-600">member of WITTE Automotive GmbH.</p>
-              <p className="text-gray-600">Na Valentince 1, Praha 5</p>
+              <p className="text-gray-600">Karla Engliše 6, Praha 5, 150 00</p>
               <p className="text-gray-600">IČO: 45277397</p>
             </div>
 

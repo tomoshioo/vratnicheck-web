@@ -63,7 +63,7 @@ const ContactSection = () => {
                   <div>
                     <div className="font-medium mb-1">Adresa</div>
                     <div className="text-gray-300">
-                      Na Valentince 1<br />
+                      Karla Engliše 6<br />
                       Praha 5, 150 00<br />
                       IČO: 45277397
                     </div>
