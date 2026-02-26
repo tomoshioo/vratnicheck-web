@@ -51,27 +51,36 @@ export function initAnalytics(): void {
   }
 }
 
+/** Meta Pixel stub: callable and has queue/callMethod for loading. */
+type FbqStub = ((...args: unknown[]) => void) & {
+  callMethod?: (this: FbqStub, ...args: unknown[]) => void;
+  queue: unknown[];
+  loaded?: boolean;
+  version?: string;
+  push?: unknown;
+};
+
 function initMetaPixel(): void {
-  if (typeof window === 'undefined' || !META_PIXEL_ID || window.fbq) return;
+  if (typeof window === 'undefined' || !META_PIXEL_ID || window._fbq) return;
 
   const f = window;
   const b = document;
   const e = 'script';
   const v = 'https://connect.facebook.net/en_US/fbevents.js';
-  let n: (typeof window.fbq) & { callMethod?: (...args: unknown[]) => void; queue: unknown[]; loaded?: boolean; version?: string };
   let t: HTMLScriptElement;
   let s: Element | null;
 
-  n = f.fbq = function () {
+  const n: FbqStub = function (this: FbqStub) {
     const a = arguments;
-    if (n.callMethod) n.callMethod.apply(n, a);
-    else n.queue.push(a);
-  } as (typeof window.fbq) & { callMethod?: (...args: unknown[]) => void; queue: unknown[] };
-  if (!f._fbq) f._fbq = n;
-  n.push = n;
+    if (this.callMethod) this.callMethod.apply(this, a as unknown as unknown[]);
+    else this.queue.push(a);
+  } as FbqStub;
+  n.queue = [];
   n.loaded = true;
   n.version = '2.0';
-  n.queue = [];
+
+  f.fbq = n;
+  if (!f._fbq) f._fbq = n;
 
   t = b.createElement(e);
   t.async = true;
@@ -79,8 +88,8 @@ function initMetaPixel(): void {
   s = b.getElementsByTagName(e)[0];
   s?.parentNode?.insertBefore(t, s);
 
-  window.fbq('init', META_PIXEL_ID);
-  window.fbq('track', 'PageView');
+  n('init', META_PIXEL_ID);
+  n('track', 'PageView');
 }
 
 /**
