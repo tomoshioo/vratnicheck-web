@@ -118,7 +118,7 @@ const ArticleDetail = () => {
                     Manuál ke stažení
                   </h3>
                   <p className="text-gray-600 text-sm mb-4">
-                    Podrobný uživatelský manuál IMAporter IDcloud vás provede všemi funkcemi a vylepšeními krok za krokem.
+                    Podrobný uživatelský manuál imaPORTER IDcloud vás provede všemi funkcemi a vylepšeními krok za krokem.
                   </p>
                   <a
                     href={article.manualPdf}

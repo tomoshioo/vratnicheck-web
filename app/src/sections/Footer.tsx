@@ -14,7 +14,7 @@ const Footer = () => {
               <span className="text-[#3ECFA0]">CHECK</span>
             </div>
             <blockquote className="text-gray-300 italic border-l-4 border-[#3ECFA0] pl-4">
-              "Tato produktová řada vstupních systémů IMAporter byla vyvinutá speciálně na míru pro školská zařízení. Jsme IMA s.r.o., přední český vývojář v oblasti vstupních a identifikačních systémů a jsme součástí velmi silné skupiny WITTE Automotive GmbH."
+              "Tato produktová řada vstupních systémů imaPORTER byla vyvinutá speciálně na míru pro školská zařízení. Jsme IMA s.r.o., přední český vývojář v oblasti vstupních a identifikačních systémů a jsme součástí velmi silné skupiny WITTE Automotive GmbH."
             </blockquote>
             <p className="text-[#3ECFA0] mt-2 font-medium">
               Josef Purnoch, vedoucí projektový manažer

@@ -59,35 +59,35 @@ const About = () => {
             >
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { icon: Building2, label: 'Společnost', value: 'IMA s.r.o.' },
-                  { icon: Globe, label: 'Skupina', value: 'WITTE Automotive' },
+                  { icon: Building2, label: 'Společnost', value: 'IMA s.r.o.', href: 'https://www.ima.cz/' },
+                  { icon: Globe, label: 'Skupina', value: 'WITTE Automotive', href: 'https://www.witte-automotive.com/' },
                   { icon: Users, label: 'Zaměstnanců', value: '50+' },
                   { icon: Award, label: 'Certifikace', value: 'ISO 9001' },
-                ].map((item, index) => (
-                  <div key={index} className="bg-white/10 rounded-2xl p-6">
-                    <item.icon className="w-8 h-8 text-[#3ECFA0] mb-3" />
-                    <div className="text-gray-400 text-sm">{item.label}</div>
-                    <div className="text-xl font-semibold">{item.value}</div>
-                  </div>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-4 pt-2">
-                <a
-                  href="https://www.ima.cz/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-full font-medium transition-colors"
-                >
-                  IMA s.r.o.
-                </a>
-                <a
-                  href="https://www.witte-automotive.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-full font-medium transition-colors"
-                >
-                  Skupina WITTE
-                </a>
+                ].map((item, index) => {
+                  const boxContent = (
+                    <>
+                      <item.icon className="w-8 h-8 text-[#3ECFA0] mb-3" />
+                      <div className="text-gray-400 text-sm">{item.label}</div>
+                      <div className="text-xl font-semibold">{item.value}</div>
+                    </>
+                  );
+                  const boxClass = 'bg-white/10 rounded-2xl p-6 block transition-colors hover:bg-white/20';
+                  return 'href' in item && item.href ? (
+                    <a
+                      key={index}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={boxClass}
+                    >
+                      {boxContent}
+                    </a>
+                  ) : (
+                    <div key={index} className="bg-white/10 rounded-2xl p-6">
+                      {boxContent}
+                    </div>
+                  );
+                })}
               </div>
             </motion.div>
           </div>

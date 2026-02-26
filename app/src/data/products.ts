@@ -43,7 +43,7 @@ export const products: Product[] = [
     tagline: 'Skříňky pro žáky na čip',
     description: 'Moderní způsob šatních a úložných skříněk pro žáky i učitele. Možnost propojení se stávajícím přístupovým systémem – jeden čip.',
     features: [
-      'Přístup přes aplikaci IMAporter, čip nebo PIN',
+      'Přístup přes aplikaci imaPORTER, čip nebo PIN',
       'Cloudová správa a statistiky využití',
       'Skupinové skříňky pro třídy a kroužky',
       'Integrace se stávajícím informačním systémem',

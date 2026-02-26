@@ -22,21 +22,6 @@ export interface Article {
 
 export const articles: Article[] = [
   {
-    id: 'imaporter-format',
-    title: 'imaPORTER – nový formát (malé ima, velké PORTER)',
-    excerpt:
-      'Představujeme nové jednotné názvosloví našeho přístupového systému: imaPORTER. Malé „ima“ a velké „PORTER“ vyjadřují spojení značky IMA s produktovou řadou určenou pro školy.',
-    date: '26. 2. 2026',
-    category: 'tiskova-zprava',
-    image: 'https://images.unsplash.com/photo-1544531586-fde5298cdd40?w=800&h=500&fit=crop',
-    slug: 'imaporter-novy-format',
-    content: `Představujeme nové jednotné názvosloví našeho přístupového systému: **imaPORTER**. Formát s malým „ima“ a velkým „PORTER“ vyjadřuje spojení značky IMA s produktovou řadou určenou pro školská zařízení.
-
-Přístupový systém imaPORTER (dříve uváděný také jako IMAporter) je nadále stejný spolehlivý produkt – mění se pouze jeho vizuální a textové označení na webu a v materiálech. Cílem je sjednotit komunikaci a posílit rozpoznatelnost značky.
-
-Všechny funkce zůstávají beze změny: otevírání mobilem (NFC na Androidu i iOS), čipy a karty, integrace s Bakaláři, Škola Online, Edupage a Edookit, hlášení rodičům a plná podpora Vrátnícheck.`,
-  },
-  {
     id: '1',
     title: 'IMA a Vrátnícheck na konferenci ElectroJobs 2025',
     excerpt:
@@ -56,23 +41,23 @@ V rámci odborného bloku "Technologie pro bezpečnější školy" IMA představ
 Pro ty z Vás, kteří se nemohli účastnit této akce, jsme k dispozici také pro individuální konzultace a dotazy, ať už se týkají konkrétních technologií nebo možné spolupráce, stačí se nám ozvat.
 
 Slovo manažera projektu Vrátnícheck:
-„Tato produktová řada vstupních systémů IMAporter byla vyvinutá speciálně na míru pro školská zařízení. Jsme IMA s.r.o., přední český vývojář v oblasti vstupních a identifikačních systémů a jsme součástí velmi silné skupiny WITTE Automotive GmbH.“
+„Tato produktová řada vstupních systémů imaPORTER byla vyvinutá speciálně na míru pro školská zařízení. Jsme IMA s.r.o., přední český vývojář v oblasti vstupních a identifikačních systémů a jsme součástí velmi silné skupiny WITTE Automotive GmbH.“
 Jan Orlický, vedoucí projektový manažer`,
   },
   {
     id: '2',
-    title: 'Nová verze aplikace IMAporter MobileAccess Key: NFC nově i na iPhonu',
+    title: 'Nová verze aplikace imaPORTER MobileAccess Key: NFC nově i na iPhonu',
     excerpt:
-      'Spouštíme aktualizovanou verzi aplikace IMAporter MobileAccess Key 3.0, která přináší zásadní novinku - podporu technologie NFC i pro iPhony (od iOS 17.4). Aplikace tak nyní funguje nejen na Androidu, ale i na nejnovějších zařízeních Apple.',
+      'Spouštíme aktualizovanou verzi aplikace imaPORTER MobileAccess Key 3.0, která přináší zásadní novinku - podporu technologie NFC i pro iPhony (od iOS 17.4). Aplikace tak nyní funguje nejen na Androidu, ale i na nejnovějších zařízeních Apple.',
     date: '7. 8. 2025',
     category: 'tiskova-zprava',
     image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=500&fit=crop',
     slug: 'nfc-iphone',
-    content: `Spouštíme aktualizovanou verzi aplikace IMAporter MobileAccess Key 3.0, která přináší zásadní novinku – podporu technologie NFC i pro iPhony (od iOS 17.4). Aplikace tak nyní funguje nejen na Androidu, ale i na nejnovějších zařízeních Apple.
+    content: `Spouštíme aktualizovanou verzi aplikace imaPORTER MobileAccess Key 3.0, která přináší zásadní novinku – podporu technologie NFC i pro iPhony (od iOS 17.4). Aplikace tak nyní funguje nejen na Androidu, ale i na nejnovějších zařízeních Apple.
 
 Mobil místo klíče – i pro iOS
 
-MobileAccess Key slouží jako chytrý přístupový klíč pro školská zařízení vybavená systémy IMAporter Pro a Basic – Vrátnícheck. Otevírání dveří je možné nejen pomocí čipu nebo karty, ale nově také pomocí NFC i v iPhonu.
+MobileAccess Key slouží jako chytrý přístupový klíč pro školská zařízení vybavená systémy imaPORTER Pro a Basic – Vrátnícheck. Otevírání dveří je možné nejen pomocí čipu nebo karty, ale nově také pomocí NFC i v iPhonu.
 
 Výhody pro správce systému / administrátory:
 
@@ -93,7 +78,7 @@ Jak aplikaci získat?
 Více informací o aplikaci naleznete ZDE. Odkaz vede na zabezpečenou webovou stránku, kde je dostupná verze ke stažení i další informace.
 
 Slovo manažera projektu Vrátnícheck:
-„Tato produktová řada vstupních systémů IMAporter byla vyvinutá speciálně na míru pro školská zařízení. Jsme IMA s.r.o., přední český vývojář v oblasti vstupních a identifikačních systémů a jsme součástí velmi silné skupiny WITTE Automotive GmbH.“
+„Tato produktová řada vstupních systémů imaPORTER byla vyvinutá speciálně na míru pro školská zařízení. Jsme IMA s.r.o., přední český vývojář v oblasti vstupních a identifikačních systémů a jsme součástí velmi silné skupiny WITTE Automotive GmbH.“
 Jan Orlický, vedoucí projektový manažer`,
   },
   {
@@ -143,15 +128,15 @@ Více na www.vratnicheck.cz`,
   },
   {
     id: '4',
-    title: 'Aktualizovaná verze IMAporter IDcloud spuštěna',
+    title: 'Aktualizovaná verze imaPORTER IDcloud spuštěna',
     excerpt:
-      'S radostí oznamujeme spuštění významné aktualizace systému IMAporter IDcloud. Nová verze přináší modernizované uživatelské rozhraní, které výrazně zlepšuje komfort při správě školského přístupového systému Vrátnícheck.',
+      'S radostí oznamujeme spuštění významné aktualizace systému imaPORTER IDcloud. Nová verze přináší modernizované uživatelské rozhraní, které výrazně zlepšuje komfort při správě školského přístupového systému Vrátnícheck.',
     date: '24. 2. 2025',
     category: 'tiskova-zprava',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop',
     slug: 'idcloud-update',
     manualPdf: '/downloads/Manual_IMA-IDCloud-CZ.pdf',
-    content: `S radostí oznamujeme spuštění významné aktualizace systému IMAporter IDcloud. Nová verze přináší modernizované uživatelské rozhraní, které výrazně zlepšuje komfort při správě školského přístupového systému Vrátnícheck.
+    content: `S radostí oznamujeme spuštění významné aktualizace systému imaPORTER IDcloud. Nová verze přináší modernizované uživatelské rozhraní, které výrazně zlepšuje komfort při správě školského přístupového systému Vrátnícheck.
 
 Klíčová vylepšení zahrnují:
 
@@ -164,7 +149,7 @@ Pro snadný přechod na novou verzi jsme připravili podrobný uživatelský man
 
 Uvítáme Vaše postřehy a připomínky k novému rozhraní i k samotnému manuálu. Vaše zpětná vazba je pro nás velmi cenná a pomůže nám systém dále vylepšovat. Své komentáře můžete zasílat přímo na e-mailovou adresu podpora@ima.cz.
 
-Věříme, že nová verze IMAporter IDcloud přispěje k ještě efektivnější správě Vašich přístupových systémů. V případě jakýchkoliv dotazů je Vám k dispozici náš technický tým na výše uvedeném kontaktu.
+Věříme, že nová verze imaPORTER IDcloud přispěje k ještě efektivnější správě Vašich přístupových systémů. V případě jakýchkoliv dotazů je Vám k dispozici náš technický tým na výše uvedeném kontaktu.
 
 Pro více informací o bezpečnostních řešeních pro školy nás kontaktujte na www.vratnicheck.cz/prezentace.`,
   },

@@ -19,7 +19,7 @@ const features = [
   {
     icon: Smartphone,
     title: 'Přístup přes aplikaci',
-    description: 'Žáci i pedagogové mohou skříňku otevřít aplikací IMAporter MobileAccess Key v telefonu – bez klíčů a bez čekání.',
+    description: 'Žáci i pedagogové mohou skříňku otevřít aplikací imaPORTER MobileAccess Key v telefonu – bez klíčů a bez čekání.',
     color: '#3ECFA0',
   },
   {
@@ -58,12 +58,12 @@ const references = [
   {
     place: 'TRIANGL multifunkční budova',
     city: 'Beroun',
-    points: ['Šatní a úložné skříňky pro žáky', '240 dřevěných skříněk', 'LED indikace stavu skříňky', 'Systém IMAporter Pro s integrovanou správou skříněk'],
+    points: ['Šatní a úložné skříňky pro žáky', '240 dřevěných skříněk', 'LED indikace stavu skříňky', 'Systém imaPORTER Pro s integrovanou správou skříněk'],
   },
   {
     place: 'VIA Beroun – školní kampus',
     city: 'Beroun',
-    points: ['Šatní a úložné skříňky pro žáky', '360 plechových skříněk', 'LED indikace stavu skříňky', 'Systém IMAporter Pro s integrovanou správou skříněk'],
+    points: ['Šatní a úložné skříňky pro žáky', '360 plechových skříněk', 'LED indikace stavu skříňky', 'Systém imaPORTER Pro s integrovanou správou skříněk'],
   },
 ];
 
@@ -174,7 +174,7 @@ const Imalocker = () => {
         </div>
       </section>
 
-      {/* Přístup mobilem – IMAporter */}
+      {/* Přístup mobilem – imaPORTER */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -190,7 +190,7 @@ const Imalocker = () => {
                 Otevřete skříňku mobilem
               </h2>
               <p className="text-gray-600 mb-4">
-                Přístup lze snadno spravovat přes aplikaci <strong className="text-[#1a1a4e]">IMAporter MobileAccess Key</strong>, 
+                Přístup lze snadno spravovat přes aplikaci <strong className="text-[#1a1a4e]">imaPORTER MobileAccess Key</strong>, 
                 školní čipovou kartu nebo PIN. Žáci nemusí nosit klíče ani extra karty – mají své věci vždy po ruce a celý proces je rychlý a přehledný.
               </p>
               <p className="text-gray-600">

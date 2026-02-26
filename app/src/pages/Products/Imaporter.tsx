@@ -19,7 +19,7 @@ const features = [
   {
     icon: Smartphone,
     title: 'Otevírání mobilem',
-    description: 'Aplikace IMAporter MobileAccess Key pro Android a iOS. Otevřete dveře jedním dotykem.',
+    description: 'Aplikace imaPORTER MobileAccess Key pro Android a iOS. Otevřete dveře jedním dotykem.',
     color: '#3ECFA0'
   },
   {
